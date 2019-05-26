@@ -820,7 +820,7 @@ gtk_editable_get_value_as_uint32(GtkEditable *editable)
  * choice number set as user_data.
  */
 void
-widget_init_choices(GtkWidget *widget, GtkSignalFunc func,
+widget_init_choices(GtkWidget *widget, GCallback func,
 		prop_def_t *def, gpointer user_data)
 {
     guint32 original;

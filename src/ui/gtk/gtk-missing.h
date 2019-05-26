@@ -130,7 +130,7 @@ guint32 gtk_editable_get_value_as_uint(GtkEditable *);
 /**
  * GtkCombo
  */
-void widget_init_choices(GtkWidget *, GtkSignalFunc, prop_def_t *,
+void widget_init_choices(GtkWidget *, GCallback, prop_def_t *,
 		gpointer user_data);
 
 /**

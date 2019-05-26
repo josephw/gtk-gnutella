@@ -22,7 +22,7 @@ install:
 script:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then export PATH=$PATH:~/.local/bin; JHB=gtk-gnutella ~/.local/bin/jhbuild run ./build.sh --target=osxbundle 2>&1 | tee build.log ;fi
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then curl -X PUT --user ${OBJECTSTORE_USER}:${OBJECTSTORE_SECRET} ${OBJECTSTORE_URL}build.log -T build.log ;fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then ./build.sh; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then ./build.sh --cflags="-DGTK_DISABLE_SINGLE_INCLUDES -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGSEAL_ENABLE"; fi
   - src/lib/random-test
   - src/lib/sort-test
   - src/lib/pattern-test

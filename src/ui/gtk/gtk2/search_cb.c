@@ -84,8 +84,8 @@ search_update_tooltip(GtkTreeView *tv, GtkTreePath *path)
 	}
 
 	if (!rc) {
-		gtk_tooltips_set_tip(settings_gui_tooltips(), GTK_WIDGET(tv),
-			_("Move the cursor over a row to see details."), NULL);
+		gtk_widget_set_tooltip_text(GTK_WIDGET(tv),
+			_("Move the cursor over a row to see details."));
 	} else {
 		gchar text[4096];
 

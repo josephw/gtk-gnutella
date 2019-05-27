@@ -676,9 +676,6 @@ create_main_window (void)
   GtkWidget *frame_statusbar_uptime;
   GtkWidget *label_statusbar_uptime;
   GtkAccelGroup *accel_group;
-  GtkTooltips *tooltips;
-
-  tooltips = gtk_tooltips_new ();
 
   accel_group = gtk_accel_group_new ();
 
@@ -1181,7 +1178,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (menu_faq);
   gtk_container_add (GTK_CONTAINER (menu_help_menu), menu_faq);
-  gtk_tooltips_set_tip (tooltips, menu_faq, _("Frequently Asked Questions"), NULL);
+  gtk_widget_set_tooltip_text (menu_faq, _("Frequently Asked Questions"));
 
   viewport_searchbar = gtk_viewport_new (NULL, NULL);
   gtk_widget_set_name (viewport_searchbar, "viewport_searchbar");
@@ -1241,7 +1238,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (button_search_whats_new);
   gtk_box_pack_start (GTK_BOX (hbox179), button_search_whats_new, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, button_search_whats_new, _("Look for newest files shared by nodes in the network vicinity"), NULL);
+  gtk_widget_set_tooltip_text (button_search_whats_new, _("Look for newest files shared by nodes in the network vicinity"));
 
   button_search_passive = gtk_button_new_with_label ("");
   button_search_passive_key = gtk_label_parse_uline (GTK_LABEL (GTK_BIN (button_search_passive)->child),
@@ -1254,7 +1251,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (button_search_passive);
   gtk_box_pack_start (GTK_BOX (hbox179), button_search_passive, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, button_search_passive, _("A passive search matches any search results routed through this node"), NULL);
+  gtk_widget_set_tooltip_text  (button_search_passive, _("A passive search matches any search results routed through this node"));
 
   hbox2112 = gtk_hbox_new (FALSE, 2);
   gtk_widget_set_name (hbox2112, "hbox2112");
@@ -1287,7 +1284,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (button_search_media_type_any);
   gtk_box_pack_start (GTK_BOX (hbox2111), button_search_media_type_any, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, button_search_media_type_any, _("Do not specify any media type (will match any kind of files remotely)"), NULL);
+  gtk_widget_set_tooltip_text (button_search_media_type_any, _("Do not specify any media type (will match any kind of files remotely)"));
 
   checkbutton_config_search_media_type_audio = gtk_check_button_new_with_label (_("Audio"));
   gtk_widget_set_name (checkbutton_config_search_media_type_audio, "checkbutton_config_search_media_type_audio");
@@ -1362,7 +1359,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (optionmenu_search_filter);
   gtk_box_pack_start (GTK_BOX (hbox2113), optionmenu_search_filter, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, optionmenu_search_filter, _("Search filters to apply locally on newly created searches."), NULL);
+  gtk_widget_set_tooltip_text (optionmenu_search_filter, _("Search filters to apply locally on newly created searches."));
   optionmenu_search_filter_menu = gtk_menu_new ();
   gtk_option_menu_set_menu (GTK_OPTION_MENU (optionmenu_search_filter), optionmenu_search_filter_menu);
 
@@ -1523,7 +1520,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox6);
   gtk_box_pack_start (GTK_BOX (hbox_stats_connections), eventbox6, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox6, _("Gnutella peers"), NULL);
+  gtk_widget_set_tooltip_text (eventbox6, _("Gnutella peers"));
 
   pixmap1 = create_pixmap (main_window, "smallserver.xpm");
   gtk_widget_set_name (pixmap1, "pixmap1");
@@ -1559,7 +1556,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox7);
   gtk_box_pack_start (GTK_BOX (hbox_stats_uploads), eventbox7, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox7, _("uploads"), NULL);
+  gtk_widget_set_tooltip_text (eventbox7, _("uploads"));
 
   pixmap2 = create_pixmap (main_window, "upload.xpm");
   gtk_widget_set_name (pixmap2, "pixmap2");
@@ -1595,7 +1592,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox8);
   gtk_box_pack_start (GTK_BOX (hbox_stats_downloads), eventbox8, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox8, _("downloads"), NULL);
+  gtk_widget_set_tooltip_text (eventbox8, _("downloads"));
 
   pixmap3 = create_pixmap (main_window, "download.xpm");
   gtk_widget_set_name (pixmap3, "pixmap3");
@@ -1641,7 +1638,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (progressbar_bws_in);
   gtk_box_pack_start (GTK_BOX (vbox42), progressbar_bws_in, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, progressbar_bws_in, _("Click to toggle display."), NULL);
+  gtk_widget_set_tooltip_text (progressbar_bws_in, _("Click to toggle display."));
   gtk_widget_set_events (progressbar_bws_in, GDK_BUTTON_PRESS_MASK);
   gtk_progress_set_show_text (GTK_PROGRESS (progressbar_bws_in), TRUE);
   gtk_progress_set_format_string (GTK_PROGRESS (progressbar_bws_in), _("in"));
@@ -1653,7 +1650,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (progressbar_bws_out);
   gtk_box_pack_start (GTK_BOX (vbox42), progressbar_bws_out, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, progressbar_bws_out, _("Click to toggle display."), NULL);
+  gtk_widget_set_tooltip_text (progressbar_bws_out, _("Click to toggle display."));
   gtk_widget_set_events (progressbar_bws_out, GDK_BUTTON_PRESS_MASK);
   gtk_progress_set_show_text (GTK_PROGRESS (progressbar_bws_out), TRUE);
   gtk_progress_set_format_string (GTK_PROGRESS (progressbar_bws_out), _("out"));
@@ -1930,7 +1927,7 @@ create_main_window (void)
   gtk_widget_show (button_nodes_disconnect);
   gtk_box_pack_start (GTK_BOX (hbox2), button_nodes_disconnect, FALSE, FALSE, 0);
   gtk_widget_set_sensitive (button_nodes_disconnect, FALSE);
-  gtk_tooltips_set_tip (tooltips, button_nodes_disconnect, _("Disconnect from selected nodes"), NULL);
+  gtk_widget_set_tooltip_text (button_nodes_disconnect, _("Disconnect from selected nodes"));
 
   button_nodes_add = gtk_button_new_with_label (_("Add"));
   gtk_widget_set_name (button_nodes_add, "button_nodes_add");
@@ -1940,7 +1937,7 @@ create_main_window (void)
   gtk_widget_show (button_nodes_add);
   gtk_box_pack_start (GTK_BOX (hbox2), button_nodes_add, FALSE, FALSE, 0);
   gtk_widget_set_sensitive (button_nodes_add, FALSE);
-  gtk_tooltips_set_tip (tooltips, button_nodes_add, _("Try to connect to specified address"), NULL);
+  gtk_widget_set_tooltip_text (button_nodes_add, _("Try to connect to specified address"));
 
   entry_host = gtk_entry_new ();
   gtk_widget_set_name (entry_host, "entry_host");
@@ -2179,7 +2176,7 @@ create_main_window (void)
                     (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_widget_set_usize (entry_nodes_ip, 72, -2);
-  gtk_tooltips_set_tip (tooltips, entry_nodes_ip, _("The current IP address and listening port for this node. To change these go to File->Preferences->Network."), NULL);
+  gtk_widget_set_tooltip_text (entry_nodes_ip, _("The current IP address and listening port for this node. To change these go to File->Preferences->Network."));
   gtk_entry_set_editable (GTK_ENTRY (entry_nodes_ip), FALSE);
 
   label8024 = gtk_label_new (_("KUID:"));
@@ -2974,7 +2971,7 @@ create_main_window (void)
   gtk_widget_show (drawingarea_fi_progress);
   gtk_container_add (GTK_CONTAINER (viewport44), drawingarea_fi_progress);
   gtk_widget_set_usize (drawingarea_fi_progress, -2, 16);
-  gtk_tooltips_set_tip (tooltips, drawingarea_fi_progress, _("Shows visual information on the download progress. Green chunks have been downloaded, with the brighter green chunks touched during this session. Yellow chunks are active right now; these active chunks are also marked with a triangle. Red chunks have not been downloaded yet. The blue line indicates which parts of the file have been seen on the network in this session."), NULL);
+  gtk_widget_set_tooltip_text (drawingarea_fi_progress, _("Shows visual information on the download progress. Green chunks have been downloaded, with the brighter green chunks touched during this session. Yellow chunks are active right now; these active chunks are also marked with a triangle. Red chunks have not been downloaded yet. The blue line indicates which parts of the file have been seen on the network in this session."));
   gtk_widget_set_events (drawingarea_fi_progress, GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
 
   notebook5 = gtk_notebook_new ();
@@ -3284,7 +3281,7 @@ create_main_window (void)
   gtk_widget_show (button_downloads_clear_stopped);
   gtk_box_pack_start (GTK_BOX (hbox86), button_downloads_clear_stopped, FALSE, TRUE, 0);
   gtk_widget_set_sensitive (button_downloads_clear_stopped, FALSE);
-  gtk_tooltips_set_tip (tooltips, button_downloads_clear_stopped, _("Clear completed, failed and unavailable downloads from list"), NULL);
+  gtk_widget_set_tooltip_text (button_downloads_clear_stopped, _("Clear completed, failed and unavailable downloads from list"));
 
   label7995 = gtk_label_new (_("Tools"));
   gtk_widget_set_name (label7995, "label7995");
@@ -3887,7 +3884,7 @@ create_main_window (void)
   gtk_widget_show (button_uploads_kill);
   gtk_box_pack_start (GTK_BOX (hbox72), button_uploads_kill, FALSE, FALSE, 0);
   gtk_widget_set_sensitive (button_uploads_kill, FALSE);
-  gtk_tooltips_set_tip (tooltips, button_uploads_kill, _("Abort and remove all selected uploads"), NULL);
+  gtk_widget_set_tooltip_text (button_uploads_kill, _("Abort and remove all selected uploads"));
 
   button_uploads_clear_completed = gtk_button_new_with_label (_(" Clear completed "));
   gtk_widget_set_name (button_uploads_clear_completed, "button_uploads_clear_completed");
@@ -3897,7 +3894,7 @@ create_main_window (void)
   gtk_widget_show (button_uploads_clear_completed);
   gtk_box_pack_start (GTK_BOX (hbox72), button_uploads_clear_completed, FALSE, FALSE, 0);
   gtk_widget_set_sensitive (button_uploads_clear_completed, FALSE);
-  gtk_tooltips_set_tip (tooltips, button_uploads_clear_completed, _("Clear already completed uploads from list"), NULL);
+  gtk_widget_set_tooltip_text (button_uploads_clear_completed, _("Clear already completed uploads from list"));
 
   table61 = gtk_table_new (2, 4, FALSE);
   gtk_widget_set_name (table61, "table61");
@@ -4624,7 +4621,7 @@ create_main_window (void)
   gtk_table_attach (GTK_TABLE (table37), entry_count_downloads, 1, 2, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, entry_count_downloads, _("Somebody tell me a sensible tooltip for this."), NULL);
+  gtk_widget_set_tooltip_text (entry_count_downloads, _("Somebody tell me a sensible tooltip for this."));
   gtk_entry_set_editable (GTK_ENTRY (entry_count_downloads), FALSE);
 
   entry_count_uploads = gtk_entry_new ();
@@ -4636,7 +4633,7 @@ create_main_window (void)
   gtk_table_attach (GTK_TABLE (table37), entry_count_uploads, 1, 2, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, entry_count_uploads, _("Somebody tell me a sensible tooltip for this."), NULL);
+  gtk_widget_set_tooltip_text (entry_count_uploads, _("Somebody tell me a sensible tooltip for this."));
   gtk_entry_set_editable (GTK_ENTRY (entry_count_uploads), FALSE);
 
   label455 = gtk_label_new (_("Chunks/Files:"));
@@ -5020,7 +5017,7 @@ create_main_window (void)
   gtk_widget_show (button_ul_stats_clear_deleted);
   gtk_box_pack_start (GTK_BOX (ul_stats_hbox2), button_ul_stats_clear_deleted, FALSE, FALSE, 0);
   gtk_widget_set_sensitive (button_ul_stats_clear_deleted, FALSE);
-  gtk_tooltips_set_tip (tooltips, button_ul_stats_clear_deleted, _("Somebody tell me a sensible tooltip for this."), NULL);
+  gtk_widget_set_tooltip_text (button_ul_stats_clear_deleted, _("Somebody tell me a sensible tooltip for this."));
 
   button_ul_stats_clear_all = gtk_button_new_with_label (_("Clear all"));
   gtk_widget_set_name (button_ul_stats_clear_all, "button_ul_stats_clear_all");
@@ -5683,7 +5680,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox5);
   gtk_box_pack_start (GTK_BOX (hbox145), eventbox5, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox5, _("You seem to be offline."), NULL);
+  gtk_widget_set_tooltip_text (eventbox5, _("You seem to be offline."));
 
   image_offline = create_pixmap (main_window, "offline.xpm");
   gtk_widget_set_name (image_offline, "image_offline");
@@ -5709,7 +5706,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_port_mapping_possible);
   gtk_box_pack_start (GTK_BOX (hbox_port_mapping), eventbox_port_mapping_possible, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_port_mapping_possible, _("Port mapping possible through UPnP or NAT-PMP."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_port_mapping_possible, _("Port mapping possible through UPnP or NAT-PMP."));
 
   image_port_mapping_possible = create_pixmap (main_window, "upnp-unusable.xpm");
   gtk_widget_set_name (image_port_mapping_possible, "image_port_mapping_possible");
@@ -5727,7 +5724,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_upnp_port_mapping_successful);
   gtk_box_pack_start (GTK_BOX (hbox_port_mapping), eventbox_upnp_port_mapping_successful, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_upnp_port_mapping_successful, _("Port mapping configured through UPnP."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_upnp_port_mapping_successful, _("Port mapping configured through UPnP."));
 
   image_upnp_successful = create_pixmap (main_window, "upnp.xpm");
   gtk_widget_set_name (image_upnp_successful, "image_upnp_successful");
@@ -5745,7 +5742,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_natpmp_port_mapping_successful);
   gtk_box_pack_start (GTK_BOX (hbox_port_mapping), eventbox_natpmp_port_mapping_successful, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_natpmp_port_mapping_successful, _("Port mapping configured through NAT-PMP."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_natpmp_port_mapping_successful, _("Port mapping configured through NAT-PMP."));
 
   image_natpmp_successful = create_pixmap (main_window, "natpmp.xpm");
   gtk_widget_set_name (image_natpmp_successful, "image_natpmp_successful");
@@ -5795,7 +5792,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_download_queue_frozen);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_download_queue_frozen, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_download_queue_frozen, _("Download queue is frozen."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_download_queue_frozen, _("Download queue is frozen."));
 
   image_download_queue_frozen = create_pixmap (main_window, "pause.xpm");
   gtk_widget_set_name (image_download_queue_frozen, "image_download_queue_frozen");
@@ -5814,7 +5811,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_chip);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_chip, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_chip, _("CPU overloaded."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_chip, _("CPU overloaded."));
 
   image_chip = create_pixmap (main_window, "chip.xpm");
   gtk_widget_set_name (image_chip, "image_chip");
@@ -5833,7 +5830,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_warning);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_warning, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_warning, _("Your uploads are stalling at an abnormal rate, indicating that your bandwidth is probably saturated. You should not run as an ultra node, and try to reduce the allocated bandwidth to gtk-gnutella to avoid saturating both your incoming and outgoing paths."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_warning, _("Your uploads are stalling at an abnormal rate, indicating that your bandwidth is probably saturated. You should not run as an ultra node, and try to reduce the allocated bandwidth to gtk-gnutella to avoid saturating both your incoming and outgoing paths."));
 
   image_warning = create_pixmap (main_window, "warning.xpm");
   gtk_widget_set_name (image_warning, "image_warning");
@@ -5859,7 +5856,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_early_stall_1);
   gtk_box_pack_start (GTK_BOX (hbox2110), eventbox_early_stall_1, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_early_stall_1, _("Capping HTTP outgoing bandwidth."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_early_stall_1, _("Capping HTTP outgoing bandwidth."));
 
   image_early_stall_1 = create_pixmap (main_window, "upload.xpm");
   gtk_widget_set_name (image_early_stall_1, "image_early_stall_1");
@@ -5877,7 +5874,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_early_stall_2);
   gtk_box_pack_start (GTK_BOX (hbox2110), eventbox_early_stall_2, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_early_stall_2, _("Splitting outgoing HTTP bandwidth evenly."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_early_stall_2, _("Splitting outgoing HTTP bandwidth evenly."), NULL);
 
   image_early_stall_2 = create_pixmap (main_window, "upload-yellow.xpm");
   gtk_widget_set_name (image_early_stall_2, "image_early_stall_2");
@@ -5895,7 +5892,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_early_stall_3);
   gtk_box_pack_start (GTK_BOX (hbox2110), eventbox_early_stall_3, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_early_stall_3, _("Disabled stealing of outgoing HTTP bandwidth."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_early_stall_3, _("Disabled stealing of outgoing HTTP bandwidth."));
 
   image_early_stall_3 = create_pixmap (main_window, "upload-red.xpm");
   gtk_widget_set_name (image_early_stall_3, "image_early_stall_3");
@@ -6062,7 +6059,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_firewall);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_firewall, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_firewall, _("You appear to be firewalled, both TCP-wise and UDP-wise. You will not see any push results, which may prevent you from seeing a large amount of results. You will not be able to send queries requesting out-of-band delivery of query hits."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_firewall, _("You appear to be firewalled, both TCP-wise and UDP-wise. You will not see any push results, which may prevent you from seeing a large amount of results. You will not be able to send queries requesting out-of-band delivery of query hits."));
 
   image_firewall = create_pixmap (main_window, "firewall.xpm");
   gtk_widget_set_name (image_firewall, "image_firewall");
@@ -6081,7 +6078,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_firewall_punchable);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_firewall_punchable, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_firewall_punchable, _("You appear to be firewalled, both TCP-wise and UDP-wise. You will not see any push results, which may prevent you from seeing a large amount of results. You will not be able to send queries requesting out-of-band delivery of query hits. However, it is possible to punch a hole into the UDP firewall, so you will be able to send out-of-band query hits."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_firewall_punchable, _("You appear to be firewalled, both TCP-wise and UDP-wise. You will not see any push results, which may prevent you from seeing a large amount of results. You will not be able to send queries requesting out-of-band delivery of query hits. However, it is possible to punch a hole into the UDP firewall, so you will be able to send out-of-band query hits."));
 
   image_firewall_punchable = create_pixmap (main_window, "firewall_punchable.xpm");
   gtk_widget_set_name (image_firewall_punchable, "image_firewall_punchable");
@@ -6100,7 +6097,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_tcp_firewall);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_tcp_firewall, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_tcp_firewall, _("You appear to be TCP-firewalled, i.e. others cannot connect to you to download files. You will not see push results, which may prevent you from seeing a large amount of results."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_tcp_firewall, _("You appear to be TCP-firewalled, i.e. others cannot connect to you to download files. You will not see push results, which may prevent you from seeing a large amount of results."));
 
   image_tcp_firewall = create_pixmap (main_window, "firewall_tcp.xpm");
   gtk_widget_set_name (image_tcp_firewall, "image_tcp_firewall");
@@ -6119,7 +6116,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_udp_firewall);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_udp_firewall, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_udp_firewall, _("You appear to be UDP-firewalled, i.e. you cannot receive unsolicited traffic via UDP. You will not be able to send queries requesting out-of-band delivery of query hits."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_udp_firewall, _("You appear to be UDP-firewalled, i.e. you cannot receive unsolicited traffic via UDP. You will not be able to send queries requesting out-of-band delivery of query hits."));
 
   image_udp_firewall = create_pixmap (main_window, "firewall_udp.xpm");
   gtk_widget_set_name (image_udp_firewall, "image_udp_firewall");
@@ -6138,7 +6135,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_firewall_udp_punchable);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_firewall_udp_punchable, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_firewall_udp_punchable, _("People can connect to you via TCP, but you are UDP-firewalled.  However, you can punch a hole into that firewall, allowing reception of replies to your UDP packets.  You will be able to send out-of-band query hits, but you won't be able to receive any."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_firewall_udp_punchable, _("People can connect to you via TCP, but you are UDP-firewalled.  However, you can punch a hole into that firewall, allowing reception of replies to your UDP packets.  You will be able to send out-of-band query hits, but you won't be able to receive any."), NULL);
 
   image_firewall_udp_punchable = create_pixmap (main_window, "firewall_udp_punchable.xpm");
   gtk_widget_set_name (image_firewall_udp_punchable, "image_firewall_udp_punchable");
@@ -6157,7 +6154,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_no_firewall);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_no_firewall, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_no_firewall, _("People can connect to you, using both TCP and UDP. Push should work and you will be able to receive out-of-band results for your queries."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_no_firewall, _("People can connect to you, using both TCP and UDP. Push should work and you will be able to receive out-of-band results for your queries."));
 
   image_no_firewall = create_pixmap (main_window, "no_firewall.xpm");
   gtk_widget_set_name (image_no_firewall, "image_no_firewall");
@@ -6176,7 +6173,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_leaf);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_leaf, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_leaf, _("Running in leaf mode."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_leaf, _("Running in leaf mode."));
 
   image_leaf = create_pixmap (main_window, "leaf.xpm");
   gtk_widget_set_name (image_leaf, "image_leaf");
@@ -6194,7 +6191,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_legacy);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_legacy, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_legacy, _("Running in legacy mode. Consider switching to auto mode."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_legacy, _("Running in legacy mode. Consider switching to auto mode."));
 
   image_legacy = create_pixmap (main_window, "legacy.xpm");
   gtk_widget_set_name (image_legacy, "image_legacy");
@@ -6212,7 +6209,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_ultra);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_ultra, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_ultra, _("Running in ultrapeer mode."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_ultra, _("Running in ultrapeer mode."));
 
   image_ultra = create_pixmap (main_window, "ultra.xpm");
   gtk_widget_set_name (image_ultra, "image_ultra");
@@ -6230,7 +6227,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_dht_none);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_dht_none, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_dht_none, _("DHT inactive."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_dht_none, _("DHT inactive."));
 
   image_dht_none = create_pixmap (main_window, "star-black.xpm");
   gtk_widget_set_name (image_dht_none, "image_dht_none");
@@ -6248,7 +6245,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_dht_seeded);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_dht_seeded, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_dht_seeded, _("DHT seeded."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_dht_seeded, _("DHT seeded."));
 
   image_dht_seeded = create_pixmap (main_window, "star-violet.xpm");
   gtk_widget_set_name (image_dht_seeded, "image_dht_seeded");
@@ -6266,7 +6263,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_dht_own_kuid);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_dht_own_kuid, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_dht_own_kuid, _("DHT looking up own KUID."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_dht_own_kuid, _("DHT looking up own KUID."));
 
   image_dht_own_kuid = create_pixmap (main_window, "star-blue.xpm");
   gtk_widget_set_name (image_dht_own_kuid, "image_dht_own_kuid");
@@ -6284,7 +6281,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_dht_completing);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_dht_completing, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_dht_completing, _("DHT bootstrapping."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_dht_completing, _("DHT bootstrapping."));
 
   image_dht_completing = create_pixmap (main_window, "star-green.xpm");
   gtk_widget_set_name (image_dht_completing, "image_dht_completing");
@@ -6302,7 +6299,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_dht_active);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_dht_active, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_dht_active, _("DHT up, active mode."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_dht_active, _("DHT up, active mode."));
 
   image_dht_active = create_pixmap (main_window, "star-yellow.xpm");
   gtk_widget_set_name (image_dht_active, "image_dht_active");
@@ -6320,7 +6317,7 @@ create_main_window (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (eventbox_image_dht_passive);
   gtk_box_pack_start (GTK_BOX (hbox199), eventbox_image_dht_passive, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, eventbox_image_dht_passive, _("DHT up, passive mode."), NULL);
+  gtk_widget_set_tooltip_text (eventbox_image_dht_passive, _("DHT up, passive mode."), NULL);
 
   image_dht_passive = create_pixmap (main_window, "star-red.xpm");
   gtk_widget_set_name (image_dht_passive, "image_dht_passive");
@@ -7437,7 +7434,7 @@ create_dlg_filters (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (button_filter_remove);
   gtk_box_pack_start (GTK_BOX (hbox97), button_filter_remove, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, button_filter_remove, _("A filter cannot be removed if it is bound to a search or if it is in use (used as a target in a rule)."), NULL);
+  gtk_widget_set_tooltip_text (button_filter_remove, _("A filter cannot be removed if it is bound to a search or if it is in use (used as a target in a rule)."));
 
   scrolledwindow490 = gtk_scrolled_window_new (NULL, NULL);
   gtk_widget_set_name (scrolledwindow490, "scrolledwindow490");
@@ -11842,7 +11839,7 @@ create_dlg_prefs (void)
                             (GtkDestroyNotify) gtk_widget_unref);
   gtk_widget_show (entry_config_netmasks);
   gtk_box_pack_start (GTK_BOX (hbox78), entry_config_netmasks, TRUE, TRUE, 0);
-  gtk_tooltips_set_tip (tooltips, entry_config_netmasks, _("Enter a semicolon separated list of networks that are local to you in the form of ip/bits or ip/netmask (eg 192.168.1.0/24 or 192.168.1.0/255.255.255.0)"), NULL);
+  gtk_widget_set_tooltip_text (entry_config_netmasks, _("Enter a semicolon separated list of networks that are local to you in the form of ip/bits or ip/netmask (eg 192.168.1.0/24 or 192.168.1.0/255.255.255.0)"));
 
   frame_expert_nw_misc = gtk_frame_new (_("Banning"));
   gtk_widget_set_name (frame_expert_nw_misc, "frame_expert_nw_misc");
@@ -11937,7 +11934,7 @@ create_dlg_prefs (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_widget_set_sensitive (entry_config_max_banned_fd, FALSE);
-  gtk_tooltips_set_tip (tooltips, entry_config_max_banned_fd, _("Actual amount of file descriptors used -- cannot be changed at runtime"), NULL);
+  gtk_widget_set_tooltip_text (entry_config_max_banned_fd, _("Actual amount of file descriptors used -- cannot be changed at runtime"));
   gtk_entry_set_editable (GTK_ENTRY (entry_config_max_banned_fd), FALSE);
 
   label654 = gtk_label_new (_("Currently used"));
@@ -12829,7 +12826,7 @@ create_dlg_prefs (void)
                     (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_widget_set_usize (spinbutton_config_search_items, 64, -2);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_search_items, _("This limits how many results gnutella returns to other people searching your files."), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_search_items, _("This limits how many results gnutella returns to other people searching your files."));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_search_items), TRUE);
 
   label38 = gtk_label_new (_("items"));
@@ -13282,7 +13279,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table9), spinbutton_config_max_high_ttl_msg, 1, 2, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_max_high_ttl_msg, _("Amount of tolerable messages above hard TTL limit per node"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_max_high_ttl_msg, _("Amount of tolerable messages above hard TTL limit per node"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_max_high_ttl_msg), TRUE);
 
   spinbutton_config_hard_ttl_limit_adj = gtk_adjustment_new (1, 5, 99, 1, 10, 10);
@@ -13295,7 +13292,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table9), spinbutton_config_hard_ttl_limit, 1, 2, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_hard_ttl_limit, _("Max hard TTL limit (hop+ttl) on message"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_hard_ttl_limit, _("Max hard TTL limit (hop+ttl) on message"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_hard_ttl_limit), TRUE);
 
   spinbutton_config_myttl_adj = gtk_adjustment_new (1, 1, 99, 1, 5, 5);
@@ -13321,7 +13318,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table9), spinbutton_config_max_high_ttl_radius, 3, 4, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_max_high_ttl_radius, _("Hop radius for counting high TTL limit messages (#hops lower than...)"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_max_high_ttl_radius, _("Hop radius for counting high TTL limit messages (#hops lower than...)"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_max_high_ttl_radius), TRUE);
 
   label160 = gtk_label_new (_("hops radius"));
@@ -14686,7 +14683,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table4), spinbutton_config_ul_usage_min_percentage, 1, 2, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_ul_usage_min_percentage, _("Until the configured percentage of outgoing HTTP bandwidth is in use, open additional upload slots on request."), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_ul_usage_min_percentage, _("Until the configured percentage of outgoing HTTP bandwidth is in use, open additional upload slots on request."));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_ul_usage_min_percentage), TRUE);
 
   label210 = gtk_label_new (_("%"));
@@ -14735,7 +14732,7 @@ create_dlg_prefs (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_widget_set_usize (spinbutton_config_speed, 64, -2);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_speed, _("What other people see as your connection speed."), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_speed, _("What other people see as your connection speed."));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_speed), TRUE);
 
   label36 = gtk_label_new (_("kbps to peers"));
@@ -15098,7 +15095,7 @@ create_dlg_prefs (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_widget_set_usize (spinbutton_config_download_max_retries, 64, -2);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_max_retries, _("Maximum attempts to make, not counting HTTP busy indications"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_max_retries, _("Maximum attempts to make, not counting HTTP busy indications"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_max_retries), TRUE);
 
   spinbutton_config_download_overlap_range_adj = gtk_adjustment_new (1, 128, 4096, 1, 10, 10);
@@ -15112,7 +15109,7 @@ create_dlg_prefs (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_widget_set_usize (spinbutton_config_download_overlap_range, 96, -2);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_overlap_range, _("Amount of bytes to overlap when resuming download"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_overlap_range, _("Amount of bytes to overlap when resuming download"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_overlap_range), TRUE);
 
   label173 = gtk_label_new (_("bytes"));
@@ -15321,7 +15318,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table8), spinbutton_config_download_retry_stopped_delay, 1, 2, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_retry_stopped_delay, _("Delay in seconds to wait when running download stops"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_retry_stopped_delay, _("Delay in seconds to wait when running download stops"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_retry_stopped_delay), TRUE);
 
   spinbutton_config_download_retry_refused_delay_adj = gtk_adjustment_new (1, 15, 100000, 1, 10, 10);
@@ -15335,7 +15332,7 @@ create_dlg_prefs (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_widget_set_usize (spinbutton_config_download_retry_refused_delay, 50, -2);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_retry_refused_delay, _("Delay in seconds to wait if connection is refused"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_retry_refused_delay, _("Delay in seconds to wait if connection is refused"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_retry_refused_delay), TRUE);
 
   spinbutton_config_download_retry_busy_delay_adj = gtk_adjustment_new (1, 15, 100000, 1, 10, 10);
@@ -15348,7 +15345,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table8), spinbutton_config_download_retry_busy_delay, 1, 2, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_retry_busy_delay, _("Delay in seconds to wait after HTTP busy indication"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_retry_busy_delay, _("Delay in seconds to wait after HTTP busy indication"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_retry_busy_delay), TRUE);
 
   spinbutton_config_download_retry_timeout_delay_adj = gtk_adjustment_new (1, 15, 100000, 1, 10, 10);
@@ -15362,7 +15359,7 @@ create_dlg_prefs (void)
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
   gtk_widget_set_usize (spinbutton_config_download_retry_timeout_delay, 50, -2);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_retry_timeout_delay, _("Delay in seconds to wait after connection failure"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_retry_timeout_delay, _("Delay in seconds to wait after connection failure"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_retry_timeout_delay), TRUE);
 
   spinbutton_config_download_retry_timeout_max_adj = gtk_adjustment_new (15, 15, 100000, 1, 10, 10);
@@ -15375,7 +15372,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table8), spinbutton_config_download_retry_timeout_max, 3, 4, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_retry_timeout_max, _("Maximum seconds to wait on auto-retry timeouts"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_retry_timeout_max, _("Maximum seconds to wait on auto-retry timeouts"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_retry_timeout_max), TRUE);
 
   spinbutton_config_download_retry_timeout_min_adj = gtk_adjustment_new (1, 15, 100000, 1, 10, 10);
@@ -15388,7 +15385,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table8), spinbutton_config_download_retry_timeout_min, 3, 4, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_retry_timeout_min, _("Minimum seconds to wait on auto-retry timeouts"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_retry_timeout_min, _("Minimum seconds to wait on auto-retry timeouts"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_retry_timeout_min), TRUE);
 
   spinbutton_config_download_connecting_timeout_adj = gtk_adjustment_new (1, 1, 100000, 1, 10, 10);
@@ -15401,7 +15398,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table8), spinbutton_config_download_connecting_timeout, 5, 6, 0, 1,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_connecting_timeout, _("Number of seconds before timeout for a connecting download"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_connecting_timeout, _("Number of seconds before timeout for a connecting download"), NULL);
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_connecting_timeout), TRUE);
 
   spinbutton_config_download_push_sent_timeout_adj = gtk_adjustment_new (1, 1, 100000, 1, 10, 10);
@@ -15414,7 +15411,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table8), spinbutton_config_download_push_sent_timeout, 5, 6, 1, 2,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_push_sent_timeout, _("Number of seconds before timeout for a 'push sent' download"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_push_sent_timeout, _("Number of seconds before timeout for a 'push sent' download"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_push_sent_timeout), TRUE);
 
   spinbutton_config_download_connected_timeout_adj = gtk_adjustment_new (1, 1, 100000, 1, 10, 10);
@@ -15427,7 +15424,7 @@ create_dlg_prefs (void)
   gtk_table_attach (GTK_TABLE (table8), spinbutton_config_download_connected_timeout, 5, 6, 2, 3,
                     (GtkAttachOptions) (GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
-  gtk_tooltips_set_tip (tooltips, spinbutton_config_download_connected_timeout, _("Number of seconds before timeout for a connected download"), NULL);
+  gtk_widget_set_tooltip_text (spinbutton_config_download_connected_timeout, _("Number of seconds before timeout for a connected download"));
   gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spinbutton_config_download_connected_timeout), TRUE);
 
   frame48 = gtk_frame_new (_("Downloading from multiple sources (swarming)"));

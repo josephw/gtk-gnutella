@@ -763,7 +763,7 @@ dbg_property_update_selection(void)
 	gtk_label_set_text(label, label_text);
 	gtk_entry_set_text(def, def_text);
 	gtk_entry_set_text(value, value_text);
-	gtk_tooltips_set_tip(settings_gui_tooltips(), GTK_WIDGET(value), tip, NULL);
+	gtk_widget_set_tooltip_text(GTK_WIDGET(value), tip);
 }
 
 static void

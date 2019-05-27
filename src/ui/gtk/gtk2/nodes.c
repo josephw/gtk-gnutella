@@ -421,8 +421,8 @@ update_tooltip(GtkTreeView *tv, GtkTreePath *path)
 			info.vendor ? info.vendor : _("Unknown"));
 
 		guc_node_clear_info(&info);
-		gtk_tooltips_set_tip(settings_gui_tooltips(),
-			GTK_WIDGET(tv), text, NULL);
+		gtk_widget_set_tooltip_text(
+			GTK_WIDGET(tv), text);
 	} else {
 		GtkWidget *w;
 

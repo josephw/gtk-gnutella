@@ -2979,7 +2979,7 @@ settings_gui_config_widget(prop_map_t *map, prop_def_t *def)
 			if (!GTK_IS_TREE_VIEW(w))
 #endif /* USE_GTK2 */
 			{
-            	gtk_tooltips_set_tip(tooltips, w, def->desc, "");
+                                gtk_widget_set_tooltip_text(w, def->desc);
 				if (GUI_PROPERTY(gui_debug) >= 9)
 					printf("\t...added tooltip\n");
 			}

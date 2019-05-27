@@ -34,7 +34,6 @@ void settings_gui_early_init(void);
 void settings_gui_init(void);
 void settings_gui_restore_panes(void);
 const gchar *settings_gui_config_dir(void);
-GtkTooltips *settings_gui_tooltips(void);
 void settings_gui_save_if_dirty(void);
 void settings_gui_shutdown(void);
 gboolean show_metric_units(void);

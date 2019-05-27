@@ -1919,7 +1919,7 @@ create_main_window (void)
   gtk_widget_set_name (button_search_passive, "button_search_passive");
   gtk_widget_show (button_search_passive);
   gtk_box_pack_start (GTK_BOX (hbox9350), button_search_passive, FALSE, FALSE, 0);
-  gtk_tooltips_set_tip (tooltips, button_search_passive, _("A passive search matches any search results routed through this node"), NULL);
+  gtk_widget_set_tooltip_text (button_search_passive, _("A passive search matches any search results routed through this node"));
   gtk_widget_add_accelerator (button_search_passive, "clicked", accel_group,
                               GDK_p, (GdkModifierType) GDK_CONTROL_MASK,
                               GTK_ACCEL_VISIBLE);

@@ -241,7 +241,7 @@ on_main_gui_map_event(GtkWidget *unused_widget,
 
 static void
 on_notebook_main_switch_page(GtkNotebook *unused_notebook,
-	GtkNotebookPage *unused_page, int page_num, void *unused_udata)
+	GtkWidget *unused_page, int page_num, void *unused_udata)
 {
 	int old_page;
 

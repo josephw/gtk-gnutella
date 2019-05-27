@@ -2147,7 +2147,7 @@ on_download_visibility_change(gboolean visible)
 
 static void
 on_notebook_downloads_switch_page(GtkNotebook *notebook,
-	GtkNotebookPage *unused_page, int page_num, void *unused_udata)
+	GtkWidget *unused_page, int page_num, void *unused_udata)
 {
 	(void) unused_udata;
 	(void) unused_page;

@@ -75,7 +75,7 @@ static enum gnet_stats_nb_page gnet_stats_notebook_current_page;
 
 static void
 on_gnet_stats_notebook_switch_page(GtkNotebook *unused_notebook,
-	GtkNotebookPage *unused_page, int page_num, void *unused_udata)
+	GtkWidget *unused_page, int page_num, void *unused_udata)
 {
 	(void) unused_notebook;
 	(void) unused_page;

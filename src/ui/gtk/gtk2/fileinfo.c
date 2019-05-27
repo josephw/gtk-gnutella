@@ -80,7 +80,7 @@ static int files_sort_depth;
 
 static void
 on_notebook_downloads_info_switch_page(GtkNotebook *unused_notebook,
-	GtkNotebookPage *unused_page, int page_num, void *unused_udata)
+	GtkWidget *unused_page, int page_num, void *unused_udata)
 {
 	(void) unused_notebook;
 	(void) unused_page;

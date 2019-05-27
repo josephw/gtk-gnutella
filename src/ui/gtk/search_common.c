@@ -1555,7 +1555,7 @@ on_entry_search_changed(GtkEditable *editable, void *unused_udata)
  */
 static void
 on_notebook_search_results_switch_page(GtkNotebook *notebook,
-	GtkNotebookPage *unused_page, int page_num, void *unused_udata)
+	GtkWidget *unused_page, int page_num, void *unused_udata)
 {
 	GtkWidget *widget;
 	search_t *search;

@@ -416,7 +416,7 @@ uploads_gui_add_upload(gnet_upload_info_t *u)
 }
 
 static GtkTreeViewColumn *
-add_column(gint column_id, GtkTreeIterCompareFunc sortfunc, GtkType column_type)
+add_column(gint column_id, GtkTreeIterCompareFunc sortfunc, GType column_type)
 {
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *renderer;

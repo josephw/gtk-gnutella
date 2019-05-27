@@ -127,12 +127,12 @@ static gpointer parent_class;
  * the GTK type system and return the unique integer id
  * associated with this type.
  *
- * @return A unique GtkType id
+ * @return A unique GType id
  */
-GtkType
+GType
 gtk_cell_renderer_progress_get_type(void)
 {
-	static GtkType cell_progress_type = 0;
+	static GType cell_progress_type = 0;
 
 	if (!cell_progress_type) {
 		static const GTypeInfo cell_progress_info =

@@ -62,7 +62,11 @@ struct _GtkColumnChooserClass {
     GtkMenuClass parent_class;
 };
 
+#if (GTK_MAJOR_VERSION >= 2)
+GType gtk_column_chooser_get_type(void);
+#else
 GtkType gtk_column_chooser_get_type(void);
+#endif
 GtkWidget* gtk_column_chooser_new(GtkWidget *widget);
 
 #ifdef __cplusplus

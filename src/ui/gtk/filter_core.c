@@ -464,8 +464,8 @@ filter_close_dialog(gboolean commit)
     if (gui_filter_dialog() != NULL) {
         gint32 coord[4] = {0, 0, 0, 0};
 
-        gdk_window_get_root_origin(gui_filter_dialog()->window, &coord[0], &coord[1]);
-        gdk_drawable_get_size(gui_filter_dialog()->window, &coord[2], &coord[3]);
+        gdk_window_get_root_origin(gtk_widget_get_window(gui_filter_dialog()), &coord[0], &coord[1]);
+        gdk_drawable_get_size(gtk_widget_get_window(gui_filter_dialog()), &coord[2], &coord[3]);
 
         gui_prop_set_guint32(PROP_FILTER_DLG_COORDS, (guint32 *) coord, 0, 4);
 

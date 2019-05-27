@@ -200,7 +200,7 @@ filter_gui_show_dialog(void)
         GUI_PROPERTY(filter_main_divider_pos));
 
     gtk_widget_show(gui_filter_dialog());
-    gdk_window_raise(gui_filter_dialog()->window);
+    gdk_window_raise(gtk_widget_get_window(gui_filter_dialog()));
 }
 
 
